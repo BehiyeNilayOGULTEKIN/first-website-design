@@ -1,0 +1,109 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
+}
+.decoration-style a{
+    text-decoration: none;
+    color: grey;
+    font-size: 0.75rem;
+    transition: font-size 0.5s, color 0.5s,text-shadow 0.5s;
+}
+.decoration-style a:hover{
+    font-size: 1rem;
+    color: white;
+    text-shadow:2px 2px 5px black;
+}
+.custom-toggler.navbar-toggler {
+    border-color: grey;
+}
+.custom-toggler .navbar-toggler-icon {
+    background-image: url(
+"data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(0,0,255, 0.8)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+}
+.video-of-tralier{
+    width: 100%;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.video-of-tralier iframe{
+    width: auto;
+    height: 300px;
+    margin: 1rem auto;
+}
+.tralier-name h4{
+    font-size: 1.25rem;
+}
+.comments-info{
+    width: auto;
+    height: auto;
+    padding: 3px;
+    display: flex;
+    border-bottom: 1px solid black ;
+}
+.social-media-connect{
+    display: flex;
+}
+.social-media-connect i{
+    font-size:1.75rem ;
+}
+.user-info{
+    width: auto;
+    height: auto;
+    display: flex;
+    align-items: center;
+}
+.user-info i{
+    font-size: 1.75rem;
+}
+.comments-info i{
+    font-size: 1.25rem;
+}
+.btn-design{
+    width: 150px;
+}
+.form-control1{
+    height: 300px;
+}
+@media (max-width:576px) {
+    .video-of-tralier iframe{
+        width: 300px;
+       
+    }
+    .grid-xs-1{
+        grid-template-columns: repeat(1,1fr);
+    }
+ }
+ @media screen and (min-width: 576px) and (max-width:992px) {
+    .video-of-tralier iframe{
+        width: 500px;
+    }
+ }
+ @media (min-width:992px) {
+    .video-of-tralier iframe{
+        width: 900px;
+    }
+    .tralier-name h3{
+        font-size: 1.5rem;
+    }
+    .gd-m-2{
+        grid-template-columns: repeat(2,1fr);
+    }
+ }
+.gd-m-1{
+    grid-template-rows:repeat(1,1fr) ;
+}
+.video-card-row .thumbnail {
+    float: left;
+    width: 300px;
+    margin-right: .9375rem
+}
+
+.video-card-col .meta,
+.video-card-row .meta {
+    overflow: hidden
+}
+
