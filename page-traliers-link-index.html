@@ -1,19 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="page-traliers-style.css">
+    <link rel="stylesheet" href="actors-page.html">
     <link rel="stylesheet" href="page-traliers-link-style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-    integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
-    crossorigin="anonymous" referrerpolicy="no-referrer" />
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
-    integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+        integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+        
 </head>
-<body>
+
+<body> 
+    <script>
+        const toggleBtn = document.querySelector('.toggle_btn')
+        const toggleBtnIcon = document.querySelector('.toggle_btn i')
+        const dropdownMenu = document.querySelector('.dropdown_menu')
+
+        toggleBtn.onclick = function () {
+            dropdownMenu.classList.toggle('open')
+            const isOpen = dropdownMenu.classList.contains('open')
+
+            toggleBtnIcon.classList = isOpen
+                ? 'fa-solid fa-xmark'
+                : 'fa-solid fa-bars'
+        } 
+    </script>
     <header>
         <div class="navbar">
             <div class="logo"><img class="header-main-logo-img"
@@ -56,20 +74,7 @@
     </header>
 
 
-    <script>
-        const toggleBtn = document.querySelector('.toggle_btn')
-        const toggleBtnIcon = document.querySelector('.toggle_btn i')
-        const dropdownMenu = document.querySelector('.dropdown_menu')
-
-        toggleBtn.onclick = function () {
-            dropdownMenu.classList.toggle('open')
-            const isOpen = dropdownMenu.classList.contains('open')
-
-            toggleBtnIcon.classList = isOpen
-                ? 'fa-solid fa-xmark'
-                : 'fa-solid fa-bars'
-        }
-    </script>
+   
     <main class="main-page-design" style="height: auto !important; background-color: #f2f2f2;">
         <section class="anasayfa_fragmanlar p-1 pl-3">
             <!-- breadcrump side -->
@@ -82,74 +87,31 @@
         </section>
         <section class="video_tralier">
             <nav class="navbar navbar-expand-lg bg-light">
-                <button class="navbar-toggler custom-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-                  <i class="navbar-toggler-icon"></i>
+                <button class="navbar-toggler custom-toggler" type="button" data-toggle="collapse"
+                    data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <i class="navbar-toggler-icon"></i>
                 </button>
-                <div class="collapse navbar-collapse align-content-center justify-content-center" id="navbarNavDropdown">
-                  <ul class="navbar-nav">
-                    <li class="nav-item p-2 decoration-style">
-                      <a class="nav-link" href="#">Haberler</a>
-                    </li>
-                    <li class="nav-item p-2 decoration-style">
-                      <a class="nav-link" href="#">Oyuncular</a>
-                    </li>
-                    <li class="nav-item p-2 decoration-style">
-                        <a class="nav-link" href="#">İzleyen Yorumları</a>
-                    </li>
-                    <li class="nav-item p-2 decoration-style">
-                        <a class="nav-link" href="#">Beyazperde Yorumları</a>
-                    </li>
-                  </ul>
+                <div class="collapse navbar-collapse align-content-center justify-content-center"
+                    id="navbarNavDropdown">
+                    <ul class="navbar-nav">
+                        <li class="nav-item p-2 decoration-style">
+                            <a class="nav-link" href="#">Haberler</a>
+                        </li>
+                        <li class="nav-item p-2 decoration-style">
+                            <a class="nav-link" href="actors-page.html" target="Iframe">Oyuncular</a>
+                        </li>
+                        <li class="nav-item p-2 decoration-style">
+                            <a class="nav-link" href="comments_sec.html" target="Iframe">İzleyen Yorumları</a>
+                        </li>
+                        <li class="nav-item p-2 decoration-style">
+                            <a class="nav-link" href="#">Beyazperde Yorumları</a>
+                        </li>
+                    </ul>
                 </div>
-              </nav>
+            </nav>
         </section>
-        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-            <ol class="carousel-indicators">
-              <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-              <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-              <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-            </ol>
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <div class="video-of-tralier">
-                        <iframe src="https://www.youtube.com/embed/9LW9DpmhrPE?autoplay=1&mute=1">
-                        </iframe>
-                    </div>
-                    <div class="carousel-caption d-none d-md-block">
-                        <h5>Tralier 1</h5>
-                        <p>6.235 views</p>
-                      </div>
-                </div>
-                <div class="carousel-item">
-                    <div class="video-of-tralier">
-                        <iframe src="https://www.youtube.com/embed/9LW9DpmhrPE?autoplay=1&mute=1">
-                        </iframe>
-                    </div>
-                    <div class="carousel-caption d-none d-md-block">
-                        <h5>Tralier 2</h5>
-                        <p>8.448 views</p>
-                      </div>
-                </div>
-                <div class="carousel-item">
-                    <div class="video-of-tralier">
-                        <iframe src="https://www.youtube.com/embed/9LW9DpmhrPE?autoplay=1&mute=1">
-                        </iframe>
-                    </div>
-                    <div class="carousel-caption d-none d-md-block">
-                        <h5>Tralier 3</h5>
-                        <p>4.442</p>
-                      </div>
-                </div>
-            </div>
-            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="sr-only">Previous</span>
-            </a>
-            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="sr-only">Next</span>
-            </a>
-            </div>
+        <iframe src="main_movie_tralier_page.html" frameborder="0" name="Iframe" class="Iframe_design" ></iframe>
         <section>
             <div class="gd gd-gap-15 gd-m-2 gd-xs-1">
                 <div class="comments align-content-center justify-content-center">
@@ -173,15 +135,16 @@
                         </div>
                     </div>
                     <section class="enter-comment p-5">
-                    <div class="input-group mb-3">
-                        <input type="text" id="yorum yap" name="yorum yap" placeholder="yorum yap..." style="height: 300px; width: 300px;">
-                        <div class="input-group-append">
-                            <button class="btn btn-outline-secondary" type="button">Yorum Yap</button>
+                        <div class="input-group mb-3">
+                            <input type="text" id="yorum yap" name="yorum yap" placeholder="yorum yap..."
+                                style="height: 300px; width: 300px;">
+                            <div class="input-group-append">
+                                <button class="btn btn-outline-secondary" type="button">Yorum Yap</button>
+                            </div>
                         </div>
-                    </div>
-                </section>
+                    </section>
                 </div>
-                
+
                 <div class="recommends">
                     <section class="pb-2">
                         <h3 class="title2 pt-3 pl-3 pr-3">Daha Fazla Fragman</h3>
@@ -198,8 +161,7 @@
                             </figure>
                             <div class="meta ">
                                 <div class="meta-title">
-                                    <a class="meta-title-link" href="/filmler/film-302401/fragman-19566966/"
-                                        >Süper
+                                    <a class="meta-title-link" href="/filmler/film-302401/fragman-19566966/">Süper
                                         Aile Dublajlı Fragman</a>
                                 </div>
                                 <div class="meta-sub light">
@@ -218,8 +180,8 @@
                             </figure>
                             <div class="meta ">
                                 <div class="meta-title">
-                                    <a class="meta-title-link" href="/filmler/film-302401/fragman-19566966/"
-                                        >Attack on titan</a>
+                                    <a class="meta-title-link" href="/filmler/film-302401/fragman-19566966/">Attack on
+                                        titan</a>
                                 </div>
                                 <div class="meta-sub light">
                                     <span>254 gösterim</span>
@@ -237,8 +199,8 @@
                             </figure>
                             <div class="meta ">
                                 <div class="meta-title">
-                                    <a class="meta-title-link" href="/filmler/film-302401/fragman-19566966/"
-                                        >SpyxFamily</a>
+                                    <a class="meta-title-link"
+                                        href="/filmler/film-302401/fragman-19566966/">SpyxFamily</a>
                                 </div>
                                 <div class="meta-sub light">
                                     <span>522 gösterim</span>
@@ -256,8 +218,8 @@
                             </figure>
                             <div class="meta ">
                                 <div class="meta-title">
-                                    <a class="meta-title-link" href="/filmler/film-302401/fragman-19566966/"
-                                        >Oshi No Ko</a>
+                                    <a class="meta-title-link" href="/filmler/film-302401/fragman-19566966/">Oshi No
+                                        Ko</a>
                                 </div>
                                 <div class="meta-sub light">
                                     <span>1546 gösterim</span>
@@ -267,12 +229,13 @@
                     </div>
                 </div>
             </div>
-        </section>
+        </section> 
     </main>
+    <!-- </iframe> -->
     <section>
         <div class="page-footer pb-3">
             <div class="gd gd-gap-15 gd-m-3 gd-s-2 gd-xs-1 pd-special">
-                <div class="text-bx pr-3 pl-3 pb-3" >
+                <div class="text-bx pr-3 pl-3 pb-3">
                     <h6 class="p1 p-3 text-center">
                         BEYAZPERDEYİ ZİYARET ET
                     </h6>
@@ -313,6 +276,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct"
         crossorigin="anonymous"></script>
-         <!-- bootstrap ekleme -->
+    <!-- bootstrap ekleme -->
 </body>
+
 </html>
