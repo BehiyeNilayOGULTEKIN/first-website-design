@@ -38,11 +38,10 @@
     font-size: 1.25rem;
 }
 .comments-info{
-    width: auto;
+    width: 100%;
     height: auto;
-    padding: 3px;
     display: flex;
-    border-bottom: 1px solid black ;
+    border-bottom: 1px solid black;
 }
 .social-media-connect{
     display: flex;
@@ -76,6 +75,15 @@
     .grid-xs-1{
         grid-template-columns: repeat(1,1fr);
     }
+    .video-card-row .thumbnail {
+        float: left;
+        width: 200px;
+        margin-right: .9375rem
+    }
+    .video-card-row .meta-title-link{
+        font-size: 0.625rem;
+    }
+    
  }
  @media screen and (min-width: 576px) and (max-width:992px) {
     .video-of-tralier iframe{

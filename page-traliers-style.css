@@ -158,6 +158,18 @@ header .dropdown_menu .action_btn {
     .gd-xs-1{
         grid-template-columns: repeat(1,1fr);
     }
+    h1{
+        font-size: 1rem;
+    }
+    h2{
+        font-size: 0.75rem;
+    }
+    h3{
+        font-size: 0.625rem;
+    }
+    h4{
+        font-size:0.523rem ;
+    }
 }
 @media screen and (min-width: 576px) and (max-width:992px) {
     .gd-s-3{
@@ -458,7 +470,7 @@ header .dropdown_menu .action_btn {
 }
 .meta-title {
     font-size: .8125rem;
-    display: inline-block
+    display: inline-block;
 }
 
 .meta-sub {
