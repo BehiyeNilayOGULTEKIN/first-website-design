@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Serie-movie-name</title>
+    <link rel="stylesheet" href="/public/stylesheets/page-traliers-style.css">
+    <link rel="stylesheet" href="/public/stylesheets/actors-page.html">
+    <link rel="stylesheet" href="/public/stylesheets/page-traliers-link-style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+        integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+        <link rel="shortcut icon" type="favicon.ico" href="image/favicon.ico"/>    
+
+</head>
+
+<body> 
+    <script>
+        const toggleBtn = document.querySelector('.toggle_btn')
+        const toggleBtnIcon = document.querySelector('.toggle_btn i')
+        const dropdownMenu = document.querySelector('.dropdown_menu')
+
+        toggleBtn.onclick = function () {
+            dropdownMenu.classList.toggle('open')
+            const isOpen = dropdownMenu.classList.contains('open')
+
+            toggleBtnIcon.classList = isOpen
+                ? 'fa-solid fa-xmark'
+                : 'fa-solid fa-bars'
+        } 
+    </script>
+    <header>
+        <div class="navbar">
+            <div class="logo"><img class="header-main-logo-img"
+                    src="https://assets.beyazperde.com/skin/img/beyazperde/logo-main.e99577c9.svg" width="200"
+                    height="23" alt="beyazperde"></a></div>
+            <ul class="links">
+                <li class="input-group-wrapper">
+                    <div class="input-group input-group-sm">
+                        <input type="text" class="form-control" placeholder="Film, dizi veya sanatçı arayın..."
+                            aria-label="Recipient's username" aria-describedby="basic-addon2">
+                        <div class="input-group-append">
+                            <span class="input-group-text" id="basic-addon2">Ara</span>
+                        </div>
+                    </div>
+                </li>
+                <li><a href="hero">Filmler</a></li>
+                <li><a href="about">Seanslar</a></li>
+                <li><a href="services">Haberler</a></li>
+                <li><a href="page-traliers-index.html">Fragmanlar</a></li>
+                <li><a href="contact">TV Dizileri</a></li>
+                <li><a href="#" class="action_btn">Giriş Yap</a></li>
+                <li><a href="#" class="action_btn">Hesap Aç</a></li>
+            </ul>
+
+            <div class="toggle_btn">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+        </div>
+
+        <div class="dropdown_menu">
+            <li><a href="hero">Filmler</a></li>
+            <li><a href="about">Seanslar</a></li>
+            <li><a href="services">Haberler</a></li>
+            <li><a href="contact">Fragmanlar</a></li>
+            <li><a href="contact">TV Dizileri</a></li>
+            <a href="#" class="action_btn">Giriş yap</a>
+            <a href="#" class="action_btn">Hesap Aç</a>
+        </div>
+
+    </header>
+
+
+   
+    <main class="main-page-design" style="height: auto !important; background-color: #f2f2f2;">
+        <section class="anasayfa_fragmanlar p-1 pl-3">
+            <!-- breadcrump side -->
+            <a href="" class="text1">Anasayfa > </a>
+            <a href="page-traliers-index.html" class="text1">Fragmanlar ></a>
+            <a href="" class="text1">Movie-Serie Name</a>
+        </section>
+        <section class="film-fragmanlari text-center">
+            <h2 class="title2 text-design"> Movie-Serie Name</h2>
+        </section>
+        <section class="video_tralier">
+            <nav class="navbar navbar-expand-lg bg-light">
+                <button class="navbar-toggler custom-toggler" type="button" data-toggle="collapse"
+                    data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <i class="navbar-toggler-icon"></i>
+                </button>
+                <div class="collapse navbar-collapse align-content-center justify-content-center"
+                    id="navbarNavDropdown">
+                    <ul class="navbar-nav">
+                        <li class="nav-item p-2 decoration-style">
+                            <a class="nav-link" href="#">Haberler</a>
+                        </li>
+                        <li class="nav-item p-2 decoration-style">
+                            <a class="nav-link" href="actors-page.html" target="Iframe">Oyuncular</a>
+                        </li>
+                        <li class="nav-item p-2 decoration-style">
+                            <a class="nav-link" href="comments_sec.html" target="Iframe">İzleyen Yorumları</a>
+                        </li>
+                        <li class="nav-item p-2 decoration-style">
+                            <a class="nav-link" href="#">Beyazperde Yorumları</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </section>
+        <iframe src="main_movie_tralier_page.html" frameborder="0" name="Iframe" class="Iframe_design" ></iframe>
+        <section>
+            <div class="gd gd-gap-15 gd-m-2 gd-xs-1">
+                <div class="comments align-content-center justify-content-center">
+                    <h3 class="title2 p-3 pl-3">Yorumlar</h3>
+                    <div class="comments-info pb-1 pl-3 pb-2 align-content-center justify-content-around" style="width: 100%;">
+                        <h6>0 yorum</h6>
+                        <button type="button btn-design" class="btn btn-light">
+                            Yorum Yap
+                            <i class="fa-solid fa-comment pl-2"></i>
+                        </button>
+                    </div>
+                    <div class="social-media-connect justify-content-between">
+                        <div class="user-info pl-5">
+                            <i class="fa-solid fa-user pl-1 pr-3"></i>
+                            <h6 class="title2 pt-3">user name</h6>
+                        </div>
+                        <div class="social-media-icons pr-5 mt-2">
+                            <i class="fa-brands fa-facebook pl-3" style="color: blue;"></i>
+                            <i class="fa-brands fa-twitter pl-3" style="color: aqua;"></i>
+                            <i class="fa-brands fa-google pl-3" style="color: red;"></i>
+                        </div>
+                    </div>
+                    <section class="enter-comment p-5">
+                        <div class="input-group mb-3">
+                            <input type="text" id="yorum yap" name="yorum yap" placeholder="yorum yap..."
+                                style="height: 300px; width: 100%;">
+                            <div class="input-group-append">
+                                <button class="btn btn-outline-secondary" type="button">Yorum Yap</button>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+
+                <div class="recommends">
+                    <section class="pb-2">
+                        <h3 class="title2 pt-3 pl-3 pr-3">Daha Fazla Fragman</h3>
+                    </section>
+                    <div class="gd gd-gap-15 gd-m-1 gd-xs-1 p-3 mt-5">
+                        <div class="video-card video-card-row">
+                            <figure class="thumbnail ">
+                                <div class="thumbnail-container">
+                                    <img class="thumbnail-img"
+                                        src="https://seyler.ekstat.com/img/max/800/i/iOA665pDf2mr7M8P-636554123779981811.jpg"
+                                        alt="Süper Aile Dublajlı Fragman"  />
+                                    <span class="thumbnail-count">2:10</span>
+                                </div>
+                            </figure>
+                            <div class="meta ">
+                                <div class="meta-title">
+                                    <a class="meta-title-link" href="/filmler/film-302401/fragman-19566966/">Süper
+                                        Aile Dublajlı Fragman</a>
+                                </div>
+                                <div class="meta-sub light">
+                                    <span>138 gösterim</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="video-card video-card-row">
+                            <figure class="thumbnail ">
+                                <div class="thumbnail-container">
+                                    <img class="thumbnail-img"
+                                        src="https://cdn.kayiprihtim.com/wp-content/uploads/2023/02/Attack-on-Titan-final-fragman.jpg"
+                                        alt="Aot Fragman"  />
+                                    <span class="thumbnail-count">5:75</span>
+                                </div>
+                            </figure>
+                            <div class="meta ">
+                                <div class="meta-title">
+                                    <a class="meta-title-link" href="/filmler/film-302401/fragman-19566966/">Attack on
+                                        titan</a>
+                                </div>
+                                <div class="meta-sub light">
+                                    <span>254 gösterim</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="video-card video-card-row">
+                            <figure class="thumbnail ">
+                                <div class="thumbnail-container">
+                                    <img class="thumbnail-img"
+                                        src="https://cdn.vox-cdn.com/thumbor/HT19jWAKk_iZM9msO0SdVfR1uDU=/0x0:1920x1080/1200x800/filters:focal(869x288:1175x594)/cdn.vox-cdn.com/uploads/chorus_image/image/72130648/The_Spy_x_Family_Anime_Succeeds_Because_of_Its_Characters_.0.jpg"
+                                        alt="SpyxFamily" />
+                                    <span class="thumbnail-count">0.57</span>
+                                </div>
+                            </figure>
+                            <div class="meta ">
+                                <div class="meta-title">
+                                    <a class="meta-title-link"
+                                        href="/filmler/film-302401/fragman-19566966/">SpyxFamily</a>
+                                </div>
+                                <div class="meta-sub light">
+                                    <span>522 gösterim</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="video-card video-card-row">
+                            <figure class="thumbnail ">
+                                <div class="thumbnail-container">
+                                    <img class="thumbnail-img"
+                                        src="https://animecorner.me/wp-content/uploads/2023/04/Oshi-no-Ko-1-6.png"
+                                        alt="Oshi-No-ko" />
+                                    <span class="thumbnail-count">2:10</span>
+                                </div>
+                            </figure>
+                            <div class="meta ">
+                                <div class="meta-title">
+                                    <a class="meta-title-link" href="/filmler/film-302401/fragman-19566966/">Oshi No
+                                        Ko</a>
+                                </div>
+                                <div class="meta-sub light">
+                                    <span>1546 gösterim</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section> 
+    </main>
+    <!-- </iframe> -->
+    <section>
+        <div class="page-footer pb-3">
+            <div class="gd gd-gap-15 gd-m-3 gd-s-2 gd-xs-1 pd-special">
+                <div class="text-bx pr-3 pl-3 pb-3">
+                    <h6 class="p1 p-3 text-center">
+                        BEYAZPERDEYİ ZİYARET ET
+                    </h6>
+                    <div class="social-media p-3 text-center">
+                        <a href=""><i class="fa-brands fa-instagram"></i></a>
+                        <a href=""><i class="fa-brands fa-facebook"></i></a>
+                        <a href=""><i class="fa-brands fa-twitter"></i></a>
+                        <a href=""><i class="fa-regular fa-envelope"></i></a>
+                    </div>
+                </div>
+                <div class="text-bx pr-3 pl-3 pb-3 ">
+                    <h6 class="p1 p-3 text-center">
+                        BEYAZPERDE MOBİLDE
+                    </h6>
+                    <div class="mobile-media p-3 text-center">
+                        Beyazperdeyi sorunsuz biçimde mobilden görüntüleyebilirsin.
+                    </div>
+                </div>
+                <div class="text-bx pr-3 pl-3 pb-3 ">
+                    <h6 class="p1 p-3 text-center">
+                        BEYAZPERDE KARDEŞ SİTELERİ
+                    </h6>
+                    <div class="other-media p-3 text-center">
+                        AlloCiné Fransa,
+                        Filmstarts Almanya,
+                        SensaCine İspanya,
+                        AdoroCinema brasil,
+                        Sensacine México Meksika,
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- bootstrap ekleme -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct"
+        crossorigin="anonymous"></script>
+    <!-- bootstrap ekleme -->
+</body>
+
+</html>

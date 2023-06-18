@@ -1,0 +1,9 @@
+.top-box{
+    display: flex;
+}
+.tanitim{
+    width: 100%;
+}
+.all-box{
+    border-bottom: 1px solid black;
+}
