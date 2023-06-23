@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Serie-movie-name</title>
+    <link rel="stylesheet" href="/public/stylesheets/page-traliers-style.css"  type="text/css">
+    <link rel="stylesheet" href="/views/actors-page.ejs">
+    <link rel="stylesheet" href="/public/stylesheets/page-traliers-link-style.css"  type="text/css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+        integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+        <link rel="shortcut icon" type="favicon.ico" href="image/favicon.ico"/>    
+
+</head>
+<!-- <div class="gd gd-gap-15 gd-m-4 gd-xs-1 gd-s-2 p-2 pl-3 pr-3">
+    <div class="card video-card video-card-col mdl-fixed">
+        <figure class="thumbnail ">
+            <div class="thumbnail-container">
+                <img class="thumbnail-img"
+                    src="data:image/jpeg;base64,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"
+                    alt="Demon Slayer 26.Bölüm Fragmanı" />
+            </div>
+        </figure>
+        <div class="meta ">
+            <div class="meta-title">
+                <a class="meta-title-link" href="/diziler/dizi-32928/video-19567239/">Demon Slayer 26.Bölüm
+                    Fragmanı</a>
+            </div>
+            <div class="meta-sub light">
+                <span>6.376 gösterim</span>
+            </div>
+        </div>
+    </div>
+    <div class="card video-card video-card-col mdl-fixed">
+        <figure class="thumbnail ">
+            <div class="thumbnail-container">
+                <img class="thumbnail-img"
+                    src="https://cdn.oneesports.gg/cdn-data/2021/12/Anime_ChainsawMan_Manga_Group_Split.jpg"
+                    alt="Chainsaw man 16.Bölüm Fragmanı" />
+            </div>
+        </figure>
+        <div class="meta ">
+            <div class="meta-title">
+                <a class="meta-title-link" href="/diziler/dizi-32928/video-19567239/">Chainsaw Man 26.Bölüm
+                    Fragmanı</a>
+            </div>
+            <div class="meta-sub light">
+                <span>5.845 gösterim</span>
+            </div>
+        </div>
+    </div>
+    <div class="card video-card video-card-col mdl-fixed">
+        <figure class="thumbnail ">
+            <div class="thumbnail-container">
+                <img class="thumbnail-img" src="https://www.asialogy.com/wp-content/uploads/death-note.jpg"
+                    alt="Death Note 14.Bölüm Fragmanı" />
+            </div>
+        </figure>
+        <div class="meta ">
+            <div class="meta-title">
+                <a class="meta-title-link" href="/diziler/dizi-32928/video-19567239/">death note 14.Bölüm
+                    Fragmanı</a>
+            </div>
+            <div class="meta-sub light">
+                <span>8.154 gösterim</span>
+            </div>
+        </div>
+    </div>
+    <div class="card video-card video-card-col mdl-fixed">
+        <figure class="thumbnail ">
+            <div class="thumbnail-container">
+                <img class="thumbnail-img"
+                    src="https://krforum.kayiprihtim.com/original/3X/8/4/847f28a668ea79be5471e88fb0da79bf0fdf39ea.jpeg"
+                    alt="Jinx 17.Bölüm Fragmanı" />
+            </div>
+        </figure>
+        <div class="meta ">
+            <div class="meta-title">
+                <a class="meta-title-link" href="/diziler/dizi-32928/video-19567239/">Jinx 17.Bölüm
+                    Fragmanı</a>
+            </div>
+            <div class="meta-sub light">
+                <span>3.421 gösterim</span>
+            </div>
+        </div>
+    </div>
+</div> -->
+<body> 
+    <script>
+        const toggleBtn = document.querySelector('.toggle_btn')
+        const toggleBtnIcon = document.querySelector('.toggle_btn i')
+        const dropdownMenu = document.querySelector('.dropdown_menu')
+
+        toggleBtn.onclick = function () {
+            dropdownMenu.classList.toggle('open')
+            const isOpen = dropdownMenu.classList.contains('open')
+
+            toggleBtnIcon.classList = isOpen
+                ? 'fa-solid fa-xmark'
+                : 'fa-solid fa-bars'
+        } 
+    </script>
+    <header>
+        <div class="navbar">
+            <div class="logo"><img class="header-main-logo-img"
+                    src="https://assets.beyazperde.com/skin/img/beyazperde/logo-main.e99577c9.svg" width="200"
+                    height="23" alt="beyazperde"></a></div>
+            <ul class="links">
+                <li class="input-group-wrapper">
+                    <div class="input-group input-group-sm">
+                        <input type="text" class="form-control" placeholder="Film, dizi veya sanatçı arayın..."
+                            aria-label="Recipient's username" aria-describedby="basic-addon2">
+                        <div class="input-group-append">
+                            <span class="input-group-text" id="basic-addon2">Ara</span>
+                        </div>
+                    </div>
+                </li>
+                <li><a href="hero">Filmler</a></li>
+                <li><a href="about">Seanslar</a></li>
+                <li><a href="services">Haberler</a></li>
+                <li><a href="page-traliers-index.html">Fragmanlar</a></li>
+                <li><a href="contact">TV Dizileri</a></li>
+                <li><a href="#" class="action_btn">Giriş Yap</a></li>
+                <li><a href="#" class="action_btn">Hesap Aç</a></li>
+            </ul>
+
+            <div class="toggle_btn">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+        </div>
+
+        <div class="dropdown_menu">
+            <li><a href="hero">Filmler</a></li>
+            <li><a href="about">Seanslar</a></li>
+            <li><a href="services">Haberler</a></li>
+            <li><a href="contact">Fragmanlar</a></li>
+            <li><a href="contact">TV Dizileri</a></li>
+            <a href="#" class="action_btn">Giriş yap</a>
+            <a href="#" class="action_btn">Hesap Aç</a>
+        </div>
+
+    </header>
+
+
+   
+    <main class="main-page-design" style="height: auto !important; background-color: #f2f2f2;">
+        <section class="anasayfa_fragmanlar p-1 pl-3">
+            <!-- breadcrump side -->
+            <a href="" class="text1">Anasayfa > </a>
+            <a href="page-traliers-index.html" class="text1">Fragmanlar ></a>
+            <a href="" class="text1">Movie-Serie Name</a>
+        </section>
+        <section class="film-fragmanlari text-center">
+            <h2 class="title2 text-design"> Movie-Serie Name</h2>
+        </section>
+        <section class="video_tralier">
+            <nav class="navbar navbar-expand-lg bg-light">
+                <button class="navbar-toggler custom-toggler" type="button" data-toggle="collapse"
+                    data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <i class="navbar-toggler-icon"></i>
+                </button>
+                <div class="collapse navbar-collapse align-content-center justify-content-center"
+                    id="navbarNavDropdown">
+                    <ul class="navbar-nav">
+                        <li class="nav-item p-2 decoration-style">
+                            <a class="nav-link" href="#">Sezon ve Bölümler</a>
+                        </li>
+                        <li class="nav-item p-2 decoration-style">
+                            <a class="nav-link" href="#">Haberler</a>
+                        </li>
+                        <li class="nav-item p-2 decoration-style">
+                            <a class="nav-link" href="actors-page.html" target="Iframe">Oyuncular</a>
+                        </li>
+                        <li class="nav-item p-2 decoration-style">
+                            <a class="nav-link" href="comments_sec.html" target="Iframe">İzleyen Yorumları</a>
+                        </li>
+                        <li class="nav-item p-2 decoration-style">
+                            <a class="nav-link" href="#">Beyazperde Yorumları</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </section>
+        <iframe src="main_movie_tralier_page.html" frameborder="0" name="Iframe" class="Iframe_design" ></iframe>
+        <section>
+            <div class="gd gd-gap-15 gd-m-2 gd-xs-1">
+                <div class="comments align-content-center justify-content-center">
+                    <h3 class="title2 p-3 pl-3">Yorumlar</h3>
+                    <div class="comments-info pb-1 pl-3 pb-2 align-content-center justify-content-around" style="width: 100%;">
+                        <h6>0 yorum</h6>
+                        <button type="button btn-design" class="btn btn-light">
+                            Yorum Yap
+                            <i class="fa-solid fa-comment pl-2"></i>
+                        </button>
+                    </div>
+                    <div class="social-media-connect justify-content-between">
+                        <div class="user-info pl-5">
+                            <i class="fa-solid fa-user pl-1 pr-3"></i>
+                            <h6 class="title2 pt-3">user name</h6>
+                        </div>
+                        <div class="social-media-icons pr-5 mt-2">
+                            <i class="fa-brands fa-facebook pl-3" style="color: blue;"></i>
+                            <i class="fa-brands fa-twitter pl-3" style="color: aqua;"></i>
+                            <i class="fa-brands fa-google pl-3" style="color: red;"></i>
+                        </div>
+                    </div>
+                    <section class="enter-comment p-5">
+                        <div class="input-group mb-3">
+                            <input type="text" id="yorum yap" name="yorum yap" placeholder="yorum yap..."
+                                style="height: 300px; width: 300px;">
+                            <div class="input-group-append">
+                                <button class="btn btn-outline-secondary" type="button">Yorum Yap</button>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+
+                <div class="recommends">
+                    <section class="pb-2">
+                        <h3 class="title2 pt-3 pl-3 pr-3">Daha Fazla Fragman</h3>
+                    </section>
+                    <div class="gd gd-gap-15 gd-m-1 gd-xs-1 p-3 mt-5">
+                        <div class="video-card video-card-row">
+                            <figure class="thumbnail ">
+                                <div class="thumbnail-container">
+                                    <img class="thumbnail-img"
+                                        src="https://seyler.ekstat.com/img/max/800/i/iOA665pDf2mr7M8P-636554123779981811.jpg"
+                                        alt="Süper Aile Dublajlı Fragman" width="208" height="117" />
+                                    <span class="thumbnail-count">2:10</span>
+                                </div>
+                            </figure>
+                            <div class="meta ">
+                                <div class="meta-title">
+                                    <a class="meta-title-link" href="/filmler/film-302401/fragman-19566966/">Süper
+                                        Aile Dublajlı Fragman</a>
+                                </div>
+                                <div class="meta-sub light">
+                                    <span>138 gösterim</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="video-card video-card-row">
+                            <figure class="thumbnail ">
+                                <div class="thumbnail-container">
+                                    <img class="thumbnail-img"
+                                        src="https://cdn.kayiprihtim.com/wp-content/uploads/2023/02/Attack-on-Titan-final-fragman.jpg"
+                                        alt="Aot Fragman" width="208" height="117" />
+                                    <span class="thumbnail-count">5:75</span>
+                                </div>
+                            </figure>
+                            <div class="meta ">
+                                <div class="meta-title">
+                                    <a class="meta-title-link" href="/filmler/film-302401/fragman-19566966/">Attack on
+                                        titan</a>
+                                </div>
+                                <div class="meta-sub light">
+                                    <span>254 gösterim</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="video-card video-card-row">
+                            <figure class="thumbnail ">
+                                <div class="thumbnail-container">
+                                    <img class="thumbnail-img"
+                                        src="https://cdn.vox-cdn.com/thumbor/HT19jWAKk_iZM9msO0SdVfR1uDU=/0x0:1920x1080/1200x800/filters:focal(869x288:1175x594)/cdn.vox-cdn.com/uploads/chorus_image/image/72130648/The_Spy_x_Family_Anime_Succeeds_Because_of_Its_Characters_.0.jpg"
+                                        alt="SpyxFamily" width="208" height="117" />
+                                    <span class="thumbnail-count">0.57</span>
+                                </div>
+                            </figure>
+                            <div class="meta ">
+                                <div class="meta-title">
+                                    <a class="meta-title-link"
+                                        href="/filmler/film-302401/fragman-19566966/">SpyxFamily</a>
+                                </div>
+                                <div class="meta-sub light">
+                                    <span>522 gösterim</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="video-card video-card-row">
+                            <figure class="thumbnail ">
+                                <div class="thumbnail-container">
+                                    <img class="thumbnail-img"
+                                        src="https://animecorner.me/wp-content/uploads/2023/04/Oshi-no-Ko-1-6.png"
+                                        alt="Oshi-No-ko" width="208" height="117" />
+                                    <span class="thumbnail-count">2:10</span>
+                                </div>
+                            </figure>
+                            <div class="meta ">
+                                <div class="meta-title">
+                                    <a class="meta-title-link" href="/filmler/film-302401/fragman-19566966/">Oshi No
+                                        Ko</a>
+                                </div>
+                                <div class="meta-sub light">
+                                    <span>1546 gösterim</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section> 
+    </main>
+    <!-- </iframe> -->
+    <section>
+        <div class="page-footer pb-3">
+            <div class="gd gd-gap-15 gd-m-3 gd-s-2 gd-xs-1 pd-special">
+                <div class="text-bx pr-3 pl-3 pb-3">
+                    <h6 class="p1 p-3 text-center">
+                        BEYAZPERDEYİ ZİYARET ET
+                    </h6>
+                    <div class="social-media p-3 text-center">
+                        <a href=""><i class="fa-brands fa-instagram"></i></a>
+                        <a href=""><i class="fa-brands fa-facebook"></i></a>
+                        <a href=""><i class="fa-brands fa-twitter"></i></a>
+                        <a href=""><i class="fa-regular fa-envelope"></i></a>
+                    </div>
+                </div>
+                <div class="text-bx pr-3 pl-3 pb-3 ">
+                    <h6 class="p1 p-3 text-center">
+                        BEYAZPERDE MOBİLDE
+                    </h6>
+                    <div class="mobile-media p-3 text-center">
+                        Beyazperdeyi sorunsuz biçimde mobilden görüntüleyebilirsin.
+                    </div>
+                </div>
+                <div class="text-bx pr-3 pl-3 pb-3 ">
+                    <h6 class="p1 p-3 text-center">
+                        BEYAZPERDE KARDEŞ SİTELERİ
+                    </h6>
+                    <div class="other-media p-3 text-center">
+                        AlloCiné Fransa,
+                        Filmstarts Almanya,
+                        SensaCine İspanya,
+                        AdoroCinema brasil,
+                        Sensacine México Meksika,
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- bootstrap ekleme -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct"
+        crossorigin="anonymous"></script>
+    <!-- bootstrap ekleme -->
+</body>
+
+</html>

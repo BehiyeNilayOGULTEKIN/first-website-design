@@ -255,14 +255,18 @@ header {
     display: grid;
 }
 .video-card-trailer img{
-    width: 150px;
+    width: 160px;
     height: 200px;
 }
 .mdl-fixed {
     display: block;
     margin-bottom: .9375rem;
 }
-
+.rowdesign{
+    display: flex;
+    flex-wrap: wrap;
+   
+}
 .video-card-trailer {
     position: relative;
     overflow: hidden;
