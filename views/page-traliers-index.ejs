@@ -82,22 +82,17 @@
         <section class="en-iyi-fragmanlar p-1 pl-3">
             <h3 class="title2">En İyi Fragmanlar</h3>
         </section>
-        <section class="fragmanlar-1 p-5">
-            <div class="video-card-trailer row gd gd-xs-2 gd-s-3 gd-m-6 gd-gap-15 ">
-                <%moviesList.forEach(movie => {%> 
-            <div class="col">
-                <div class="row">
+        <section class="fragmanlar-1 p-3">
+            <div class="video-card-trailer gd gd-xs-2 gd-s-3 gd-m-6 gd-gap-15 ">
+                <%moviesList.forEach(movie=> {%>
                     <figure class="thumbnail ">
                         <div class="thumbnail-layer">
-                            <div class="layer-link-holder"><a href="/page-traliers-link-index"
-                                    class="layer-link"><%=movie.title %></a></div>
+                            <div class="layer-link-holder"><a href="/page-traliers-link-index" class="layer-link">
+                                    <%=movie.title %>
+                                </a></div>
                         </div>
-                        <span
-                            class=" thumbnail-container thumbnail-link"
-                            title="">
-                            <img class="thumbnail-img"
-                                src="<%= movie.posterurl %>"
-                                alt="" />
+                        <span class=" thumbnail-container thumbnail-link" title="">
+                            <img class="thumbnail-img" src="<%= movie.posterurl %>" alt="" />
                             <span class="ico-play ico-play-yellow">
                                 <span class="ico-play-inner"></span>
                                 <i class="ico-play-arrow">
@@ -107,11 +102,8 @@
                             <span class="thumbnail-count"></span>
                         </span>
                     </figure>
-                </div>
-             </div>
-        
-                 <%})%>
-        
+                    <%})%>
+
             </div>
         </section>
         <section class="en-iyi-fragmanlara-goz-at ">
@@ -126,22 +118,17 @@
                 Şuan Sinemalardaki Film Fragmanları
             </h3>
         </section>
-        <section class="fragmanlar-2 p-5">
-            <div class="video-card-trailer row gd gd-xs-2 gd-s-3 gd-m-6 gd-gap-15 ">
-                <%moviesList.forEach(movie => {%> 
-            <div class="col">
-                <div class="row">
+        <section class="fragmanlar-2 p-3">
+            <div class="video-card-trailer gd gd-xs-2 gd-s-3 gd-m-6 gd-gap-15 ">
+                <%moviesList.forEach(movie=> {%>
                     <figure class="thumbnail ">
                         <div class="thumbnail-layer">
-                            <div class="layer-link-holder"><a href="/page-traliers-link-index"
-                                    class="layer-link"><%=movie.title %></a></div>
+                            <div class="layer-link-holder"><a href="/page-traliers-link-index" class="layer-link">
+                                    <%=movie.title %>
+                                </a></div>
                         </div>
-                        <span
-                            class=" thumbnail-container thumbnail-link"
-                            title="">
-                            <img class="thumbnail-img"
-                                src="<%= movie.posterurl %>"
-                                alt="" />
+                        <span class=" thumbnail-container thumbnail-link" title="">
+                            <img class="thumbnail-img" src="<%= movie.posterurl %>" alt="" />
                             <span class="ico-play ico-play-yellow">
                                 <span class="ico-play-inner"></span>
                                 <i class="ico-play-arrow">
@@ -151,11 +138,8 @@
                             <span class="thumbnail-count"></span>
                         </span>
                     </figure>
-                </div>
-             </div>
-        
-                 <%})%>
-        
+                    <%})%>
+
             </div>
         </section>
         <section class="su-an-sinema-goz-at">
@@ -168,22 +152,18 @@
         <section class="yakinda-sinemada">
             <h3 class="title2 p-1 pl-3">Yakında Sinemada Olacak Film Fragmanları</h3>
         </section>
-        <section class="fragmanlar-3 p-5">
-            <div class="video-card-trailer row gd gd-xs-2 gd-s-3 gd-m-6 gd-gap-15 ">
-                <%moviesList.forEach(movie => {%> 
-            <div class="col">
-                <div class="row">
+        <section class="fragmanlar-3 p-3">
+            <div class="video-card-trailer gd gd-xs-2 gd-s-3 gd-m-6 gd-gap-15 ">
+                <%moviesList.forEach(movie=> {%>
+
                     <figure class="thumbnail ">
                         <div class="thumbnail-layer">
-                            <div class="layer-link-holder"><a href="/page-traliers-link-index"
-                                    class="layer-link"><%=movie.title %></a></div>
+                            <div class="layer-link-holder"><a href="/page-traliers-link-index" class="layer-link">
+                                    <%=movie.title %>
+                                </a></div>
                         </div>
-                        <span
-                            class=" thumbnail-container thumbnail-link"
-                            title="">
-                            <img class="thumbnail-img"
-                                src="<%= movie.posterurl %>"
-                                alt="" />
+                        <span class=" thumbnail-container thumbnail-link" title="">
+                            <img class="thumbnail-img" src="<%= movie.posterurl %>" alt="" />
                             <span class="ico-play ico-play-yellow">
                                 <span class="ico-play-inner"></span>
                                 <i class="ico-play-arrow">
@@ -193,11 +173,8 @@
                             <span class="thumbnail-count"></span>
                         </span>
                     </figure>
-                </div>
-             </div>
-        
-                 <%})%>
-        
+                    <%})%>
+
             </div>
         </section>
         <section class="yakinda-sinemada-goz-at">
@@ -210,22 +187,18 @@
         <section class="son-fragmanlar">
             <h3 class="title2 p-1 pl-3">Son Yayınlanan Film Fragmanları</h3>
         </section>
-        <section class="fragmanlar-4 p-5">
-            <div class="video-card-trailer row gd gd-xs-2 gd-s-3 gd-m-6 gd-gap-15 ">
-                <%moviesList.forEach(movie => {%> 
-            <div class="col">
-                <div class="row">
+        <section class="fragmanlar-4 p-3">
+            <div class="video-card-trailer gd gd-xs-2 gd-s-3 gd-m-6 gd-gap-15 ">
+                <%moviesList.forEach(movie=> {%>
+
                     <figure class="thumbnail ">
                         <div class="thumbnail-layer">
-                            <div class="layer-link-holder"><a href="/page-traliers-link-index"
-                                    class="layer-link"><%=movie.title %></a></div>
+                            <div class="layer-link-holder"><a href="/page-traliers-link-index" class="layer-link">
+                                    <%=movie.title %>
+                                </a></div>
                         </div>
-                        <span
-                            class=" thumbnail-container thumbnail-link"
-                            title="">
-                            <img class="thumbnail-img"
-                                src="<%= movie.posterurl %>"
-                                alt="" />
+                        <span class=" thumbnail-container thumbnail-link" title="">
+                            <img class="thumbnail-img" src="<%= movie.posterurl %>" alt="" />
                             <span class="ico-play ico-play-yellow">
                                 <span class="ico-play-inner"></span>
                                 <i class="ico-play-arrow">
@@ -235,11 +208,10 @@
                             <span class="thumbnail-count"></span>
                         </span>
                     </figure>
-                </div>
-             </div>
-        
-                 <%})%>
-        
+
+
+                    <%})%>
+
             </div>
         </section>
         <section class="en-iyi-fragman">
@@ -253,22 +225,17 @@
         <section class="gelecek-dizi">
             <h3 class="title2 p-1 pl-3">Gelecek Dizi Fragmanları</h3>
         </section>
-        <section class="fragmanlar-5 p-5">
-            <div class="video-card-trailer row gd gd-xs-2 gd-s-3 gd-m-6 gd-gap-15 ">
-                <%moviesList.forEach(movie => {%> 
-            <div class="col">
-                <div class="row">
+        <section class="fragmanlar-5 p-3">
+            <div class="video-card-trailer gd gd-xs-2 gd-s-3 gd-m-6 gd-gap-15 ">
+                <%moviesList.forEach(movie=> {%>
                     <figure class="thumbnail ">
                         <div class="thumbnail-layer">
-                            <div class="layer-link-holder"><a href="/page-traliers-link-index"
-                                    class="layer-link"><%=movie.title %></a></div>
+                            <div class="layer-link-holder"><a href="/page-traliers-link-index" class="layer-link">
+                                    <%=movie.title %>
+                                </a></div>
                         </div>
-                        <span
-                            class=" thumbnail-container thumbnail-link"
-                            title="">
-                            <img class="thumbnail-img"
-                                src="<%= movie.posterurl %>"
-                                alt="" />
+                        <span class=" thumbnail-container thumbnail-link" title="">
+                            <img class="thumbnail-img" src="<%= movie.posterurl %>" alt="" />
                             <span class="ico-play ico-play-yellow">
                                 <span class="ico-play-inner"></span>
                                 <i class="ico-play-arrow">
@@ -278,11 +245,8 @@
                             <span class="thumbnail-count"></span>
                         </span>
                     </figure>
-                </div>
-             </div>
-        
-                 <%})%>
-        
+                    <%})%>
+
             </div>
         </section>
         <section class="gelecek-dizi-goz-at">
@@ -294,21 +258,16 @@
             <h3 class="title2 p-1 pl-3">Yeni Sezon Dizi Fragmanları</h3>
         </section>
         <section id="fragmanlar-6 ">
-            <div class="video-card-trailer row gd gd-xs-2 gd-s-3 gd-m-6 gd-gap-15 p-5">
-                <%moviesList.forEach(movie => {%> 
-            <div class="col">
-                <div class="row">
+            <div class="video-card-trailer gd gd-xs-2 gd-s-3 gd-m-6 gd-gap-15 p-3">
+                <%moviesList.forEach(movie=> {%>
                     <figure class="thumbnail ">
                         <div class="thumbnail-layer">
-                            <div class="layer-link-holder"><a href="/page-traliers-link-index"
-                                    class="layer-link"><%=movie.title %></a></div>
+                            <div class="layer-link-holder"><a href="/page-traliers-link-index" class="layer-link">
+                                    <%=movie.title %>
+                                </a></div>
                         </div>
-                        <span
-                            class=" thumbnail-container thumbnail-link"
-                            title="">
-                            <img class="thumbnail-img"
-                                src="<%= movie.posterurl %>"
-                                alt="" />
+                        <span class=" thumbnail-container thumbnail-link" title="">
+                            <img class="thumbnail-img" src="<%= movie.posterurl %>" alt="" />
                             <span class="ico-play ico-play-yellow">
                                 <span class="ico-play-inner"></span>
                                 <i class="ico-play-arrow">
@@ -318,11 +277,8 @@
                             <span class="thumbnail-count"></span>
                         </span>
                     </figure>
-                </div>
-             </div>
-        
-                 <%})%>
-        
+                    <%})%>
+
             </div>
         </section>
         <section class="yeni-sezon-frg-goz-at">
@@ -335,94 +291,97 @@
         </section>
         <section id="fragmanlar-7 p-5">
             <div class="gd gd-gap-15 gd-m-4 gd-xs-1 gd-s-2 p-2 pl-3 pr-3">
-                <%moviesList2.forEach(recentmovies => {%>
-                   <div class=" video-card video-card-row ">
+                <%moviesList2.forEach(recentmovies=> {%>
+                    <div class=" video-card video-card-row ">
                         <figure class="thumbnail ">
                             <div class="thumbnail-container">
-                                <img class="thumbnail-img"
-                                    src="<%= recentmovies.posterurl %>"
-                                    />
+                                <img class="thumbnail-img" src="<%= recentmovies.posterurl %>" />
                             </div>
                         </figure>
                         <div class="meta ">
                             <div class="meta-title">
-                                <a class="meta-title-link"><%= recentmovies.tralier %>
+                                <a class="meta-title-link">
+                                    <%= recentmovies.tralier %>
                                 </a>
                             </div>
                             <div class="meta-sub light">
-                                <span><%= recentmovies.watch %></span>
+                                <span>
+                                    <%= recentmovies.watch %>
+                                </span>
                             </div>
                         </div>
-                   </div>
-                <%})%>
-                </div> </section>
-                <section>
-                <div class="gd gd-gap-15 gd-m-4 gd-xs-1 gd-s-2 p-2 pl-3 pr-3">
-                    <%moviesList2.forEach(recentmovies => {%>
-                        <div class="video-card video-card-row">
-                            <figure class="thumbnail ">
-                                <div class="thumbnail-container">
-                                    <img class="thumbnail-img"
-                                        src="<%= recentmovies.posterurl %>"
-                                        />
-                                </div>
-                            </figure>
-                            <div class="meta ">
-                                <div class="meta-title">
-                                    <a class="meta-title-link"><%= recentmovies.tralier %>
-                                    </a>
-                                </div>
-                                <div class="meta-sub light">
-                                    <span><%= recentmovies.watch %></span>
-                                </div>
-                            </div>
-                       </div>
-                    <%})%>
                     </div>
-       </section>
+                    <%})%>
+            </div>
+        </section>
+        <section>
+            <div class="gd gd-gap-15 gd-m-4 gd-xs-1 gd-s-2 p-2 pl-3 pr-3">
+                <%moviesList2.forEach(recentmovies=> {%>
+                    <div class="video-card video-card-row">
+                        <figure class="thumbnail ">
+                            <div class="thumbnail-container">
+                                <img class="thumbnail-img" src="<%= recentmovies.posterurl %>" />
+                            </div>
+                        </figure>
+                        <div class="meta ">
+                            <div class="meta-title">
+                                <a class="meta-title-link">
+                                    <%= recentmovies.tralier %>
+                                </a>
+                            </div>
+                            <div class="meta-sub light">
+                                <span>
+                                    <%= recentmovies.watch %>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <%})%>
+            </div>
+        </section>
         <section class="en-son-dizi-goz-at">
             <h4 class="text2 text-endline p-1 pb-5 pl-3">
                 En son dizi fragmanlarına bak
             </h4>
-        </section> 
+        </section>
     </main>
     <section>
-            <div class="page-footer pb-3">
-                <div class="gd gd-gap-15 gd-m-3 gd-s-2 gd-xs-1 pd-special">
-                    <div class="text-bx pr-3 pl-3 pb-3" >
-                        <h6 class="p1 p-3 text-center">
-                            BEYAZPERDEYİ ZİYARET ET
-                        </h6>
-                        <div class="social-media p-3 text-center">
-                            <a href=""><i class="fa-brands fa-instagram"></i></a>
-                            <a href=""><i class="fa-brands fa-facebook"></i></a>
-                            <a href=""><i class="fa-brands fa-twitter"></i></a>
-                            <a href=""><i class="fa-regular fa-envelope"></i></a>
-                        </div>
+        <div class="page-footer pb-3">
+            <div class="gd gd-gap-15 gd-m-3 gd-s-2 gd-xs-1 pd-special">
+                <div class="text-bx pr-3 pl-3 pb-3">
+                    <h6 class="p1 p-3 text-center">
+                        BEYAZPERDEYİ ZİYARET ET
+                    </h6>
+                    <div class="social-media p-3 text-center">
+                        <a href=""><i class="fa-brands fa-instagram"></i></a>
+                        <a href=""><i class="fa-brands fa-facebook"></i></a>
+                        <a href=""><i class="fa-brands fa-twitter"></i></a>
+                        <a href=""><i class="fa-regular fa-envelope"></i></a>
                     </div>
-                    <div class="text-bx pr-3 pl-3 pb-3 ">
-                        <h6 class="p1 p-3 text-center">
-                            BEYAZPERDE MOBİLDE
-                        </h6>
-                        <div class="mobile-media p-3 text-center">
-                            Beyazperdeyi sorunsuz biçimde mobilden görüntüleyebilirsin.
-                        </div>
+                </div>
+                <div class="text-bx pr-3 pl-3 pb-3 ">
+                    <h6 class="p1 p-3 text-center">
+                        BEYAZPERDE MOBİLDE
+                    </h6>
+                    <div class="mobile-media p-3 text-center">
+                        Beyazperdeyi sorunsuz biçimde mobilden görüntüleyebilirsin.
                     </div>
-                    <div class="text-bx pr-3 pl-3 pb-3 ">
-                        <h6 class="p1 p-3 text-center">
-                            BEYAZPERDE KARDEŞ SİTELERİ
-                        </h6>
-                        <div class="other-media p-3 text-center">
-                            AlloCiné Fransa,
-                            Filmstarts Almanya,
-                            SensaCine İspanya,
-                            AdoroCinema brasil,
-                            Sensacine México Meksika,
-                        </div>
+                </div>
+                <div class="text-bx pr-3 pl-3 pb-3 ">
+                    <h6 class="p1 p-3 text-center">
+                        BEYAZPERDE KARDEŞ SİTELERİ
+                    </h6>
+                    <div class="other-media p-3 text-center">
+                        AlloCiné Fransa,
+                        Filmstarts Almanya,
+                        SensaCine İspanya,
+                        AdoroCinema brasil,
+                        Sensacine México Meksika,
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
     <!-- bootstrap ekleme -->
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
@@ -430,7 +389,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct"
         crossorigin="anonymous"></script>
-         <!-- bootstrap ekleme -->
+    <!-- bootstrap ekleme -->
 </body>
 
 </html>
