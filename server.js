@@ -4,7 +4,7 @@ const app =express();
 const ejs =require('ejs');
 // const bodyParser = require('body-parser');
 app.set('view engine','ejs');
- mongoose.connect('mongodb+srv://Admin:***@mydatabase.ilwyvfv.mongodb.net/beyazperde?retryWrites=true&w=majority');
+ mongoose.connect('mongodb+srv://Admin:1.***@mydatabase.ilwyvfv.mongodb.net/beyazperde?retryWrites=true&w=majority');
 //  const movieSchema={
 //     title: String,
 //     posterurl:String,
@@ -171,8 +171,8 @@ const movieSchema = new mongoose.Schema({
 });
 
 const recentmoviesSchema = new mongoose.Schema({
-  urlposter: String,
-  trailer: String,
+  posterurl: String,
+  tralier: String,
   watch: String,
 });
 

@@ -295,7 +295,7 @@
                     <div class=" video-card video-card-row ">
                         <figure class="thumbnail ">
                             <div class="thumbnail-container">
-                                <img class="thumbnail-img" src="<%= recentmovies.urlposter %>" />
+                                <img class="thumbnail-img" src="<%= recentmovies.posterurl %>" />
                             </div>
                         </figure>
                         <div class="meta ">
@@ -315,18 +315,18 @@
             </div>
         </section>
         <section>
-            <div class="gd gd-gap-15 gd-m-4 gd-xs-1 gd-s-2 p-2 pl-3 pr-3">
+            <div class="video-card video-card-row gd gd-gap-15 gd-m-4 gd-xs-1 gd-s-2 p-2 pl-3 pr-3">
                 <%moviesList2.forEach(recentmovies=> {%>
-                    <div class="video-card video-card-row">
+                    <div class="">
                         <figure class="thumbnail ">
                             <div class="thumbnail-container">
-                                <img class="thumbnail-img" src="<%= recentmovies.urlposter %>" />
+                                <img class="thumbnail-img" src="<%= recentmovies.posterurl %>" />
                             </div>
                         </figure>
                         <div class="meta ">
                             <div class="meta-title">
                                 <a class="meta-title-link">
-                                    <%= recentmovies.tralier %>
+                                      <%= recentmovies.tralier %>  
                                 </a>
                             </div>
                             <div class="meta-sub light">
