@@ -4,7 +4,7 @@ const app =express();
 const ejs =require('ejs');
 // const bodyParser = require('body-parser');
 app.set('view engine','ejs');
- mongoose.connect('mongodb+srv://Admin:1.nilayunutma@mydatabase.ilwyvfv.mongodb.net/beyazperde?retryWrites=true&w=majority');
+ mongoose.connect('mongodb+srv://Admin:***@mydatabase.ilwyvfv.mongodb.net/beyazperde?retryWrites=true&w=majority');
 //  const movieSchema={
 //     title: String,
 //     posterurl:String,
