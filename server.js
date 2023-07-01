@@ -192,6 +192,8 @@ app.get('/', (req, res) => {
         moviesList2: recentmovies,
       });
       console.log(recentmovies);
+      console.log(movies);
+      //controlling the datas 
     })
     .catch(err => {
       console.log("Error!", err);
