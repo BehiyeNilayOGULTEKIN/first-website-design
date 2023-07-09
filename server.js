@@ -8,7 +8,7 @@ const MongoClient = require('mongodb').MongoClient;
 // const bodyParser = require('body-parser');
 const url = 'mongodb://localhost:4000';
 const dbName = 'beyazperde';
-const dbUrl= 'mongodb+srv://Admin:1.nilayunutma@mydatabase.ilwyvfv.mongodb.net/beyazperde?retryWrites=true&w=majority';
+const dbUrl= 'mongodb+srv://Admin:@mydatabase.ilwyvfv.mongodb.net/beyazperde?retryWrites=true&w=majority';
 app.set('view engine','ejs');
 app.use(bodyParser.urlencoded({ extended: true }));
  mongoose.connect(dbUrl,{ useNewUrlParser: true,useUnifiedTopology:true}).then((result)=> console.log("bağlantı kuruldu")).catch((result)=>console.log("bağlantı başarısız"));
@@ -204,18 +204,15 @@ app.get('/', (req, res) => {
         moviesList: movies,
         moviesList2: recentmovies,
       });
-<<<<<<< HEAD
+     
       // res.render("comments_sec", {
       //   commentsList:comments,
       // });
       // console.log(recentmovies);
       // console.log(comments);
 
-=======
       console.log(recentmovies);
       console.log(movies);
-      //controlling the datas 
->>>>>>> ebdb2d489047d2d2de132ee3df19d4f968da5c27
     })
     .catch(err => {
       console.log("Error!", err);
