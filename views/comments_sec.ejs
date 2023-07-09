@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+    
 
 <head>
     <meta charset="UTF-8">
@@ -19,18 +20,21 @@
 <body>
     <main class="main-page-design" style="height: auto !important; background-color: #f2f2f2;">
        <section class="comments_section p-3 gd gd-gap-15 gd-m-1 gd-xs-1"">
+        <% commentsList.forEach(comments => {%>
         <div class="card " style="width: 100%;">
             <div class="card-body">
                 <div class="p-2 pb-3 avatar" style="width: 5rem; height: 5rem; background-color: black;"></div>
-                <h5 class="card-title">Username</h5>
-                <h6 class="card-subtitle mb-2 text-muted">Comment title</h6>
-                <p class="card-text">the comments about the movie or serie</p>
+                <h5 class="card-title"><%= comments.username %></h5>
+                <h6 class="card-subtitle mb-2 text-muted">Yorum</h6>
+                <p class="card-text"><%= comments.comment %></p>
                 <div class="reaction justify-content-end align-bottom" style="width: 100%;"></div>
                 <a href="#" class="card-link p-2"><i class="fa-regular fa-plus" style="color: aqua;"></i></a>
                 <a href="#" class="card-link p-2"><i class="fa-solid fa-minus" style="color: red;"></i></a>
             </div>
-        </div>
-            <div class="card " style="width: 100%;">
+        </div> 
+       
+        <%})%>
+            <!-- <div class="card " style="width: 100%;">
                 <div class="card-body">
                     <div class="p-2 pb-3 avatar" style="width: 5rem; height: 5rem;"></div>
                     <h5 class="card-title">Username</h5>
@@ -51,7 +55,7 @@
                     <a href="#" class="card-link p-2"><i class="fa-regular fa-plus" style="color: aqua;"></i></a>
                     <a href="#" class="card-link p-2"><i class="fa-solid fa-minus" style="color: red;"></i></a>
                 </div>
-            </div>
+            </div> -->
         </section>
     </main>
 

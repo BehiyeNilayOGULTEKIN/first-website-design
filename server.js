@@ -2,9 +2,16 @@ const express =require('express');
 const mongoose=require('mongoose');
 const app =express();
 const ejs =require('ejs');
+const bodyParser = require('body-parser');
+const MongoClient = require('mongodb').MongoClient;
+
 // const bodyParser = require('body-parser');
+const url = 'mongodb://localhost:4000';
+const dbName = 'beyazperde';
+const dbUrl= 'mongodb+srv://Admin:1.nilayunutma@mydatabase.ilwyvfv.mongodb.net/beyazperde?retryWrites=true&w=majority';
 app.set('view engine','ejs');
- mongoose.connect('mongodb+srv://Admin:1.***@mydatabase.ilwyvfv.mongodb.net/beyazperde?retryWrites=true&w=majority');
+app.use(bodyParser.urlencoded({ extended: true }));
+ mongoose.connect(dbUrl,{ useNewUrlParser: true,useUnifiedTopology:true}).then((result)=> console.log("bağlantı kuruldu")).catch((result)=>console.log("bağlantı başarısız"));
 //  const movieSchema={
 //     title: String,
 //     posterurl:String,
@@ -175,23 +182,34 @@ const recentmoviesSchema = new mongoose.Schema({
   tralier: String,
   watch: String,
 });
-
-const Movie = mongoose.model('Movie', movieSchema);
+const commentsSchema = new mongoose.Schema({
+  username:String,
+  comment:String,
+});
+const Movie = mongoose.model('Movie', movieSchema)
+module.exports= Movie;
 const recentmovie = mongoose.model('recentmovies', recentmoviesSchema);
+const commentssec = mongoose.model('comments', commentsSchema);
+
 
 app.use('/public', express.static('public'));
 // app.use(bodyParser.urlencoded({extended: true}));
 app.get('/', (req, res) => {
   const movies = Movie.find({}).exec();
   const recentmovies = recentmovie.find({}).exec();
-
+  // // const comments = commentssec.find({}).exec();
   Promise.all([movies, recentmovies])
     .then(([movies, recentmovies]) => {
       res.render("page-traliers-index", {
         moviesList: movies,
         moviesList2: recentmovies,
       });
-      console.log(recentmovies);
+      // res.render("comments_sec", {
+      //   commentsList:comments,
+      // });
+      // console.log(recentmovies);
+      // console.log(comments);
+
     })
     .catch(err => {
       console.log("Error!", err);
@@ -218,16 +236,40 @@ app.get('/actors-page', (req, res) => {
     res.render('actors-page');
     
     });
-app.get('/page-traliers-link-index', (req, res) => {
-
-    res.render('page-traliers-link-index');
-      
-    });
+// app.get('/comments_sec', (req, res) => {
+//   const comments = commentssec.find({}).exec();
+//   res.render("comments_sec", {
+//     commentsList:comments,
+//   });
+//           console.log(commentsList);
+//     });
+// app.get('/comments_sec', (req, res) => {
+//   commentssec.find({}).exec((err, comments) => {
+//     if (err) {
+//       // Handle the error appropriately
+//       console.error(err);
+//       res.status(500).send('Internal Server Error');
+//     } else {
+//       res.render("comments_sec", {
+//         commentsList: comments,
+//       });
+//       console.log(comments); // Use `comments` instead of `commentsList`
+//     }
+//   });
+// });
 app.get('/comments_sec', (req, res) => {
-
-        res.render('comments_sec');
-          
+  commentssec.find({}).exec()
+    .then(comments => {
+      res.render("comments_sec", {
+        commentsList: comments,
+      });
+      console.log(comments);
+    })
+    .catch(err => {
+      console.error(err);
+      res.status(500).send('Internal Server Error');
     });
+});
 app.get('/main_movie_tralier_page', (req, res) => {
 
             res.render('main_movie_tralier_page');
@@ -246,5 +288,10 @@ app.get('/seasons-eposides', (req, res) => {
 app.get('/serie-tralier-index', (req, res) => {
 
   res.render('serie-tralier-index');
+    
+});
+app.get('/admin_traliers', (req, res) => {
+
+  res.render('admin_traliers');
     
 });
