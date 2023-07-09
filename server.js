@@ -204,12 +204,18 @@ app.get('/', (req, res) => {
         moviesList: movies,
         moviesList2: recentmovies,
       });
+<<<<<<< HEAD
       // res.render("comments_sec", {
       //   commentsList:comments,
       // });
       // console.log(recentmovies);
       // console.log(comments);
 
+=======
+      console.log(recentmovies);
+      console.log(movies);
+      //controlling the datas 
+>>>>>>> ebdb2d489047d2d2de132ee3df19d4f968da5c27
     })
     .catch(err => {
       console.log("Error!", err);
