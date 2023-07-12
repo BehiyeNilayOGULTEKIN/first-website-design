@@ -256,8 +256,9 @@ app.get('/page-traliers-link-index/:id', (req, res) => {
       res.send('Film alınırken hata oluştu');
     });
 });
-app.listen(4000, () => {
-  console.log("Server is running");
+const PORT=process.env.PORT
+app.listen(PORT, () => {
+  console.log("Server is running"+PORT);
 });
 app.get('/actors-page', (req, res) => {
 
