@@ -2,15 +2,16 @@ const express =require('express');
 const mongoose=require('mongoose');
 const app =express();
 const ejs =require('ejs');
+const router =express.router;
 const bodyParser = require('body-parser');
 const MongoClient = require('mongodb').MongoClient;
-
 // const bodyParser = require('body-parser');
 const url = 'mongodb://localhost:4000';
 const dbName = 'beyazperde';
-const dbUrl= 'mongodb+srv://Admin:@mydatabase.ilwyvfv.mongodb.net/beyazperde?retryWrites=true&w=majority';
+const dbUrl= 'mongodb+srv://Admin:1.nilayunutma@mydatabase.ilwyvfv.mongodb.net/beyazperde?retryWrites=true&w=majority';
 app.set('view engine','ejs');
 app.use(bodyParser.urlencoded({ extended: true }));
+app.use(express.urlencoded({extended:true}));
  mongoose.connect(dbUrl,{ useNewUrlParser: true,useUnifiedTopology:true}).then((result)=> console.log("bağlantı kuruldu")).catch((result)=>console.log("bağlantı başarısız"));
 //  const movieSchema={
 //     title: String,
@@ -204,15 +205,12 @@ app.get('/', (req, res) => {
         moviesList: movies,
         moviesList2: recentmovies,
       });
-     
       // res.render("comments_sec", {
       //   commentsList:comments,
       // });
       // console.log(recentmovies);
       // console.log(comments);
 
-      console.log(recentmovies);
-      console.log(movies);
     })
     .catch(err => {
       console.log("Error!", err);
@@ -224,13 +222,40 @@ app.get('/page-traliers-index', (req, res) => {
   res.render('page-traliers-index');
   
   });
-  
-app.get('/page-traliers-link-index', (req, res) => {
 
-  res.render('page-traliers-link-index');
+// app.get('/page-traliers-link-index/:id', (req, res) => {
+//   const movies = Movie.find({}).exec();
+//   const id= req.params.id
+//   console.log(id)
+//   Movie.findById(id).then((result) => {
+//      res.render('page-traliers-link-index',{
+//       Movie : result,title : "Detay"
+//      });
   
-  });
-  
+//   });
+//   //  Movie.find({}).exec()
+//   //  .then(movies => {
+//   //    res.render("/page-traliers-link-index/:id", {
+//   //      moviesList: movies,
+//   //    });
+//   //  })
+//   })
+app.get('/page-traliers-link-index/:id', (req, res) => {
+  const id = req.params.id;
+  console.log(id);
+
+  Movie.findById(id)
+    .then((result) => {
+      res.render('page-traliers-link-index', {
+        Movie: result,
+        title: 'Detay',
+      });
+    })
+    .catch((error) => {
+      console.log('Film alınırken hata oluştu:', error);
+      res.send('Film alınırken hata oluştu');
+    });
+});
 app.listen(4000, () => {
   console.log("Server is running");
 });
@@ -260,6 +285,54 @@ app.get('/actors-page', (req, res) => {
 //     }
 //   });
 // });
+// app.delete("/admin_traliers/delete/:id", (req, res) => {
+//   const id = mongoose.Types.ObjectId(req.params.id);
+//   Movie.findByIdAndDelete(id,{new: true })
+//     .then((result) => {
+//       res.json({ link: "/admin_traliers" });
+//     })
+//     .catch((err) => {
+//       console.log(err);
+//     });
+//     console.log(id)
+// });
+// app.delete('/admin_traliers/delete/:id',function(req,res){
+//   let delid =req.params.id;
+//   Movie.findByIdAndDelete(({id:delid}),function(err,docs){
+//     if(docs!=null){
+//       res.redirect('/admin_traliers')
+//     }
+//   })
+  // const {id}=req.params
+  // if(!mongoose.Types.ObjectId.isValid(id)){
+  //     return res.status(404).json({error:'No such news'})
+  // } 
+  // const movie=await Movie.findOneAndDelete({_id: id}) 
+
+  // if (!movie) {
+  //     return res.status(400).json({error:'No such news'})
+  // }
+  // console.log(error)
+  // res.status(200).json(movie)
+  // const id=req.params.id
+  // Movie.findByIdAndDelete(id)
+  // .then((result) => {
+  //   res.json({link:'/admin_traliers'});
+  // })
+  // .catch((err) => {
+  //   console.log(err);
+  // })
+  app.delete("/admin_traliers/delete/:id", (req, res) => {
+    const id = req.params.id;
+    Movie.findByIdAndDelete(id)
+      .then((result) => {
+        res.json({ success: true });
+      })
+      .catch((err) => {
+        console.log(err);
+        res.json({ success: false, error: err.message });
+      });
+  });
 app.get('/comments_sec', (req, res) => {
   commentssec.find({}).exec()
     .then(comments => {
@@ -293,8 +366,97 @@ app.get('/serie-tralier-index', (req, res) => {
   res.render('serie-tralier-index');
     
 });
-app.get('/admin_traliers', (req, res) => {
+app.get('/admin_traliers/edit/:id', (req, res) => {
+  const id = req.params.id;
 
-  res.render('admin_traliers');
-    
+  Movie.findById(id)
+    .then((foundMovie) => {
+      res.render('edit', { movie: foundMovie });
+    })
+    .catch((err) => {
+      console.log(err);
+    });
 });
+
+
+app.get('/admin_traliers', (req, res) => {
+  Movie.find().sort({createdAt:-1})
+  .then((result) =>{
+    res.render("admin_traliers",{title:"Admin",movies:result})
+  }
+  )
+
+});
+app.post("/admin_traliers", (req,res) => {
+  const newmovie= new Movie(req.body)
+  newmovie.save()
+  .then((result)=>
+  {
+    res.redirect("/admin_traliers");
+  })
+  .catch((err) =>{
+    console.log(err)
+  })
+});
+// app.put('/admin_traliers/edit/:id', (req, res) => {
+//   const id = req.params.id;
+//   const { title, posterurl } = req.params.body;
+//   Movie.findByIdAndUpdate(id, { title, posterurl })
+//   .then((result) => {
+//     res.json({success:true})
+//   })
+//   .catch((err)=> {
+//     console.log(err)
+//   })
+// });
+
+// Edit endpoint'i
+// app.put('/admin_traliers/edit/:id', (req, res) => {
+//   const id = req.params.id;
+//   const { title, posterurl } = req.body;
+
+//   Movie.findByIdAndUpdate(id, { title, posterurl }, { new: true })
+//     .then((updatedMovie) => {
+//       res.json({ success: true, movie: updatedMovie });
+//     })
+//     .catch((err) => {
+//       console.log(err);
+//       res.json({ success: false, error: err.message });
+//     });
+// });
+app.put("/admin_traliers/edit/:id", (req, res) => {
+  const id = req.params.id;
+  const { title, posterurl } = req.body;
+
+  Movie.findByIdAndUpdate(id, { title, posterurl }, { new: true })
+    .then((updatedMovie) => {
+      res.json(updatedMovie);
+    })
+    .catch((err) => {
+      console.log(err);
+      res.status(500).json({ error: "An error occurred while updating the movie" });
+    });
+});
+// app.delete("/admin_traliers/delete/:id",(req,res) =>{
+//   const id=req.params.id;
+//   Movie.findByIdAndDelete(id)
+//   .then((result) => {
+//     res.json({link:"/admin_traliers"})
+//   })
+//   .catch((err) =>{
+//     console.log(err)
+//   })
+// });
+// app.delete("/admin_traliers/delete/:id", (req, res) => {
+//   const id = mongoose.Types.ObjectId(req.params.id);
+//   Movie.findByIdAndDelete(id)
+//   .then((result) => {
+//     res.json({link:"/admin_traliers"})
+//   })
+//   .catch((err)=> {
+//     console.log(err)
+//   })
+// });
+
+// ...
+

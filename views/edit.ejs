@@ -1,0 +1,55 @@
+<h1>Edit Movie</h1>
+<form id="edit-form">
+  <label for="title">Title:</label><br>
+  <input type="text" id="title" name="title" value="<%= movie.title %>"><br>
+  <label for="posterurl">Poster URL:</label><br>
+  <input type="text" id="posterurl" name="posterurl" value="<%= movie.posterurl %>"><br><br>
+  <button onclick="editMovie()">Edit</button>
+</form>
+
+<script>
+//   function editMovie(id) {
+//     const title = document.getElementById('title').value;
+//     const posterurl = document.getElementById('posterurl').value;
+
+//     fetch(`/admin_traliers/edit/${id}`, {
+//       method: 'PUT',
+//       headers: {
+//         'Content-Type': 'application/json'
+//       },
+//       body: JSON.stringify({ title, posterurl })
+//     })
+//     .then((response) => response.json())
+//     .then((data) => {
+//         console.log(data);
+//         // Sayfayı yenilemek ve diğer işlemler
+        
+//     window.location.href = '/admin_traliers';
+//       })
+//     .catch((err) => {
+//       console.log(err);
+//     });
+//   }
+function editMovie() {
+    const id = "<%= movie._id %>";
+    const title = document.getElementById('title').value;
+    const posterurl = document.getElementById('posterurl').value;
+
+    fetch(`/admin_traliers/update/${id}`, {
+      method: 'PUT',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ title, posterurl })
+    })
+    .then((response) => response.json())
+    .then((data) => {
+      console.log(data);
+      // Düzenleme işlemi tamamlandığında admin_traliers sayfasına yönlendir
+      window.location.href = '/admin_traliers';
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+  }
+</script>

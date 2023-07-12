@@ -13,16 +13,80 @@
 </head>
 <body>
     <main class="main-page-design" style="height:auto !important ;">
+        <section>
+            <h2 class="p-2">Film Düzenleme Sayfası</h2>
+        </section>
+        <section>
+            <form action="/admin_traliers" class="p-2" method="post">
+                <label for="">Fotoğraf url:</label>
+                <input type="text" name="posterurl" id="" placeholder="url">
+                <label for="">Başlık:</label>
+                <input type="text" name="title">
+                <input type="submit" name="" id="" value="Ekle">
+            </form>
+        </section>
     <section class="p-5">
-        <form action="">
-            <h1>Add a New Movie</h1>
-    <form action="/addMovie" method="POST">
-        <input type="text" name="title" placeholder="Movie Title">
-        <input  type="text" name="url" placeholder="Movie URL">
-        <input type="submit" value="Upload">
-    </form>
-        </form>
+        <% movies.forEach(movie => { %>
+            <div class="p-2">
+            <div class="card">
+                <div class="card-header">
+                  Film
+                </div>
+                <div class="card-body">
+                  <h5 class="card-title"><%=movie.title %></h5>
+                  <p class="card-text"><%=movie.posterurl %></p>
+                  <a href="/admin_traliers/edit/<%= movie._id %>" class="btn btn-primary">Düzenle</a>
+                  <button class="btn btn-danger" onclick="deleteMovie('<%= movie._id %>')">Sil</button>
+                </div>
+              </div></div>
+       <% }) %>
     </section>
+    <script>
+//         const del = document.querySelectorAll('a.del');
+//         console.log(del)
+//         const delLinks =[].slice.call(del)
+//         console.log(delLinks)
+//         delLinks.forEach((item,i) => {
+//           item.addEventListener("click", (e) => {// ObjectId olarak kabul edilen bir değer alınır
+//   const endpoint = '/admin_traliers/${item.dataset.doc}';
+//   fetch(endpoint, {
+//     method: 'DELETE'
+//   })
+//   .then((response) => response.json())
+//   .then((data) => window.location.href = data.link)
+//   .catch((err) => {
+//     console.log(err);
+//   });
+// });
+//         });
+// del.addEventListener("click", (e) => {
+//   const id = del.dataset.doc; // ObjectId olarak kabul edilen bir değer alınır
+//   const endpoint = '/admin_traliers/delete/${del.dataset.doc}';
+//   fetch(endpoint, {
+//     method: 'DELETE'
+//   })
+//   .then((response) => response.json())
+//   .then((data) => window.location.href = data.link)
+//   .catch((err) => {
+//     console.log(err);
+//   });
+// });
+function deleteMovie(id) {
+      fetch(`/admin_traliers/delete/${id}`, {
+        method: 'DELETE'
+      })
+      .then((response) => response.json())
+      .then((data) => {
+        console.log(data);
+        // Sayfayı yenilemek ve diğer işlemler
+        window.location.reload();
+    window.location.href = '/admin_traliers';
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+    }
+    </script>
     </main>
 </body>
 </html>
